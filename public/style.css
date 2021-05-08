@@ -1,0 +1,220 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #F7F7F7;
+  --color-text-main: #222;
+  --color-primary: #0425DB;
+  --wrapper-height: 85vh;
+  --image-max-width: 320px;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Navigation grid */
+.footer {
+  font-family: "Jura", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 0.5px solid #222;
+  
+}
+
+
+.copyright {
+  font-family: "Jura", sans-serif;
+  width: 100%;
+  padding: 1rem 0 0.75rem 0;
+  color: #777;
+}
+
+.header h1 a:link {
+  text-decoration: none;
+  border-style: none;
+}
+
+.header h1 {
+  margin-bottom: 0.1rem;
+  font-size: 3rem;
+  color: #103F91;
+  letter-spacing: -0.05em;
+}
+
+.intro {
+    margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.intro p {
+    font-size: 1.1rem;
+}
+
+.byline {
+  color: #888;
+}
+
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #000;
+  text-decoration: none;
+  border-style: none;
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.divider {
+  padding: 0 1rem;
+}
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+
+/* Page structure */
+body {
+  background-color: var(--color-bg);
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+}
+.wrapper {
+  min-height: var(--wrapper-height);
+  place-items: center;
+  margin: 2rem 2rem 0;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Typography */
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5 !important;
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 1rem 0 0.8rem;
+  font-family: "Jura", sans-serif;
+  font-weight: 600;
+  color: var(--color-text-main);
+      letter-spacing: -0.025em;
+    margin-left: -0.1rem;
+}
+h1 {
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  font-weight: 700;
+    font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.125rem;
+}
+h5 {
+  font-size: 1rem;
+}
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+ul { 
+  list-style-type: "■  "; 
+}
+
+.date, .extract_end {
+  color: #777;
+}
+
+.extract_end {
+  text-align: center;
+}
+
+ul > li,
+ol > li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+ul {
+  padding: 0 0 0 18px;
+  margin: 0;
+}
+ul.no-bullet {
+  list-style-type: none;
+}
+
+b,
+strong {
+  font-weight: 400;
+}
+
+/* Link styles */
+a:not(.btn--remix):link,
+a:not(.btn--remix):visited,
+a:not(h1) {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-primary);
+  color: var(--foreground);
+  transition: background 0.2s linear;
+}
+
+/* Title style adjustments */
+.title-lg {
+  color: var(--color-text-main);
+  font-family: "Merriweather Sans", serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.title-md {
+  font-size: 56px;
+}
+
+/* Post */
+.post {
+  place-items: normal;
+}
+.postTitle {
+  font-size: 2rem;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.controls {
+  margin: 3rem 0 2rem;
+}

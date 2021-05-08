@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+<div class="home">
+  <div class="content">
+    <div class="intro">
+      {{ content | safe }}
+    </div>
+    
+    
+    {%- for post in collections.posts.slice(0, 3) -%}
+    <h1 class="preview">
+      <a href='{{ post.url }}'>{{ post.data.title }}</a>
+      
+      </h1>
+    <p class="date">
+      {{ post.data.page.date | htmlDateString }}
+    </p>
+    {{ post.templateContent | safe }}
+    <span class="extract_end">...</span>
+    {%- endfor -%}
+    
+    <h2>
+      More Posts
+    </h2>
+    <ul>
+      {%- for post in collections.posts.slice(3) -%}
+        <li{% if page.url == post.url %} aria-current="page"{% endif %}><span class="date">{{ post.data.page.date | htmlDateString }}:</span> <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
+      {%- endfor -%}
+          <a href="/posts">View all posts</a>
+    </ul>
+  </div>
+</div>
+
+
