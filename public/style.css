@@ -13,6 +13,8 @@ to this section's matching END comment to see page-specific styles.
   --color-primary: #0425DB;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
+  --title-font: "Jura";
+  --body-font: "Rubik";
 }
 
 /* Basic page style resets */
@@ -25,7 +27,7 @@ to this section's matching END comment to see page-specific styles.
 
 /* Navigation grid */
 .footer {
-  font-family: "Jura", sans-serif;
+  font-family: var(--title-font), sans-serif;
   display: flex;
   justify-content: space-between;
   margin: 1rem auto 0;
@@ -38,7 +40,7 @@ to this section's matching END comment to see page-specific styles.
 
 
 .copyright {
-  font-family: "Jura", sans-serif;
+  font-family: var(--title-font), sans-serif;
   width: 100%;
   padding: 1rem 0 0.75rem 0;
   color: #777;
@@ -54,6 +56,7 @@ to this section's matching END comment to see page-specific styles.
   font-size: 3rem;
   color: #103F91;
   letter-spacing: -0.05em;
+      margin-left: -0.2rem;
 }
 
 .intro {
@@ -94,7 +97,7 @@ END Glitch hello-app default styles
 /* Page structure */
 body {
   background-color: var(--color-bg);
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: var(--body-font), sans-serif;
   font-weight: 300;
 }
 .wrapper {
@@ -102,7 +105,6 @@ body {
   place-items: center;
   margin: 2rem 2rem 0;
 }
-
 
 .content {
   display: flex;
@@ -114,23 +116,27 @@ body {
 /* Typography */
 p {
   margin: 0 0 1rem 0;
-  line-height: 1.5 !important;
   font-size: 1rem;
 }
+
+p, li {
+    line-height: 1.65rem !important;
+}
+
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-  margin: 1rem 0 0.8rem;
-  font-family: "Jura", sans-serif;
+  margin: 1rem 0 0.5rem;
+  font-family: var(--title-font), sans-serif;
   font-weight: 600;
   color: var(--color-text-main);
-      letter-spacing: -0.025em;
+      letter-spacing: -0.05em;
     margin-left: -0.1rem;
 }
 h1 {
-  margin-bottom: 1.25rem;
   display: inline-flex;
   font-weight: 700;
     font-size: 1.75rem;
@@ -154,11 +160,19 @@ small,
 }
 
 ul { 
-  list-style-type: "■  "; 
+  list-style-type: "– "; 
 }
 
 .date, .extract_end {
   color: #777;
+  margin-bottom: 2rem;
+}
+
+.post_nav {
+  color: #bbb;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
 }
 
 .extract_end {
@@ -181,7 +195,7 @@ ul.no-bullet {
 
 b,
 strong {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Link styles */
@@ -197,7 +211,7 @@ a:not(h1) {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: "Merriweather Sans", serif;
+  font-family: var(--body-font), serif;
   font-style: normal;
   font-weight: bold;
 }
@@ -213,8 +227,8 @@ a:not(h1) {
   font-size: 2rem;
   color: #000;
   line-height: 1.1;
-  margin-bottom: 2rem;
 }
 .controls {
   margin: 3rem 0 2rem;
+  font-weight: 300;
 }

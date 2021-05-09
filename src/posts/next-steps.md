@@ -7,7 +7,7 @@ tags:
 layout: layouts/post.njk
 ---
 
-The Eleventy ecosystem is *huge*! There are [official and community](https://www.11ty.dev/docs/starter/) starters for almost any glitch project you can dream up.
+The **Eleventy ecosystem** is *huge*! There are [official and community](https://www.11ty.dev/docs/starter/) starters for almost any glitch project you can dream up.
 
 The best part is, no matter what starter you use, as long as you set your eleventy app to *generated static site*, you'll be able to take advantage of the feature on Glitch! (someone plz rewrite this)
 

@@ -27,7 +27,7 @@ templateClass: tmpl-home
     </h2>
     <ul>
       {%- for post in collections.posts.slice(3) -%}
-        <li{% if page.url == post.url %} aria-current="page"{% endif %}><span class="date">{{ post.data.page.date | htmlDateString }}:</span> <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
+        <li{% if page.url == post.url %} aria-current="page"{% endif %}><span class="date">{{ post.data.page.date | htmlDateString }} — </span> <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
       {%- endfor -%}
           <a href="/posts">View all posts</a>
     </ul>
