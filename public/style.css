@@ -13,8 +13,8 @@ to this section's matching END comment to see page-specific styles.
   --color-primary: #0425DB;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
-  --title-font: "Jura";
-  --body-font: "Rubik";
+  --title-font: "Exo 2";
+  --body-font: "Noto Sans KR";
 }
 
 /* Basic page style resets */
@@ -35,9 +35,7 @@ to this section's matching END comment to see page-specific styles.
   width: 100%;
   flex-wrap: wrap;
   border-top: 0.5px solid #222;
-  
 }
-
 
 .copyright {
   font-family: var(--title-font), sans-serif;
@@ -55,17 +53,18 @@ to this section's matching END comment to see page-specific styles.
   margin-bottom: 0.1rem;
   font-size: 3rem;
   color: #103F91;
-  letter-spacing: -0.05em;
-      margin-left: -0.2rem;
+  font-weight: 600;
+  letter-spacing: -0.05rem;
 }
 
+
 .intro {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
   font-size: 1.5rem;
 }
 
 .intro p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .byline {
@@ -99,7 +98,12 @@ body {
   background-color: var(--color-bg);
   font-family: var(--body-font), sans-serif;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  
+    font-size: 1.1rem;
+  letter-spacing: 0.0125rem;
 }
+
 .wrapper {
   min-height: var(--wrapper-height);
   place-items: center;
@@ -109,20 +113,22 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 /* Typography */
-p {
+
+p > code, li > code {
+  font-size: 1.125rem;
+}
+
+p,
+li {
+  line-height: 1.7rem !important;
+
   margin: 0 0 1rem 0;
-  font-size: 1rem;
 }
-
-p, li {
-    line-height: 1.65rem !important;
-}
-
 
 h1,
 h2,
@@ -131,15 +137,13 @@ h4,
 h5 {
   margin: 1rem 0 0.5rem;
   font-family: var(--title-font), sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text-main);
-      letter-spacing: -0.05em;
-    margin-left: -0.1rem;
+  margin-left: -0.1rem;
 }
 h1 {
   display: inline-flex;
-  font-weight: 700;
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 h2 {
@@ -159,20 +163,21 @@ small,
   font-size: 0.8rem;
 }
 
-ul { 
-  list-style-type: "– "; 
+ul {
+  list-style-type: "– ";
 }
 
-.date, .extract_end {
+.date,
+.extract_end {
   color: #777;
   margin-bottom: 2rem;
 }
 
 .post_nav {
   color: #bbb;
-  font-size: 0.75rem;
   margin-bottom: 1rem;
   margin-right: 0.5rem;
+  font-family: var(--title-font), sans-serif;
 }
 
 .extract_end {
@@ -195,7 +200,7 @@ ul.no-bullet {
 
 b,
 strong {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Link styles */

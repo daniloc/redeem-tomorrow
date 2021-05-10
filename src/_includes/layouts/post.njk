@@ -5,29 +5,23 @@ templateClass: tmpl-home
 
 <div class="post">
   <div class="content">
-    <h1 class='postTitle'>{{title}}</h1>
-    <p class="date">
-      {{ page.date | htmlDateString }}
-    </p>
-    
-    {{ content | safe }}
-        <span class="extract_end">...</span>
+    {% include './post-meta.njk' %}
+
     <div class="controls">
-          {% if nextPost.url %}
+      {% if nextPost.url %}
       <p>
-        <strong class="post_nav">◀ </strong>
+        <strong class="post_nav">< </strong>
 
         <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
       </p>
-    {% endif %}
-    {% if prevPost.url %}
-      <p>        
-        <strong class="post_nav">▶ </strong>
-        <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+      {% endif %} {% if prevPost.url %}
+      <p>
+        <strong class="post_nav">> </strong>
+        <a class="previous" href="{{ prevPost.url }}"
+          >{{ prevPost.data.title }}</a
+        >
       </p>
-    {% endif %}
+      {% endif %}
     </div>
-
-
   </div>
 </div>

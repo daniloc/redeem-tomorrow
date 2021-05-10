@@ -1,0 +1,10 @@
+<h1 class="preview">
+  <a href="{{ url }}">{{ title }}</a>
+</h1>
+<p class="date">
+  {{ date | htmlDateString }}
+</p>
+
+{{ content | safe }}
+
+<span class="extract_end">...</span>
