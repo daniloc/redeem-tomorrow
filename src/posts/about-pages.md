@@ -4,6 +4,8 @@ description: Edit and create pages
 date: 2021-03-12
 tags:
   - posts
+  - turkey
+  - seville
 layout: layouts/post.njk
 ---
 

@@ -4,6 +4,8 @@ description: What could you build on top of this?
 date: 2021-03-18
 tags:
   - posts
+  - sausage
+  - fiction
 layout: layouts/post.njk
 ---
 

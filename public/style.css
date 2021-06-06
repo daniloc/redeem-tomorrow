@@ -11,10 +11,28 @@ to this section's matching END comment to see page-specific styles.
   --color-bg: #F7F7F7;
   --color-text-main: #222;
   --color-primary: #0425DB;
+  --border: #222;
+  --secondary-text: #777;
+  --title-color: #103F91;
+  --nav-color: #bbb;
+
   --wrapper-height: 85vh;
   --image-max-width: 320px;
   --title-font: "Exo 2";
-  --body-font: "Noto Sans KR";
+  --body-font: "Source Sans Pro";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #151515;
+    --color-text-main: #ccc;
+    --color-primary: #466599;
+    --border: #555;
+    --secondary-text: #999;
+    --title-color: #5585D9;
+    --nav-color: #bbb;
+    color: #ddd;
+  }
 }
 
 /* Basic page style resets */
@@ -34,14 +52,15 @@ to this section's matching END comment to see page-specific styles.
   padding: 1rem 0 0 0;
   width: 100%;
   flex-wrap: wrap;
-  border-top: 0.5px solid #222;
+  border-top: 0.5px solid var(--border);
 }
 
 .copyright {
   font-family: var(--title-font), sans-serif;
   width: 100%;
   padding: 1rem 0 0.75rem 0;
-  color: #777;
+  color: var(--secondary-text);
+  font-size: 0.75rem;
 }
 
 .header h1 a:link {
@@ -52,11 +71,10 @@ to this section's matching END comment to see page-specific styles.
 .header h1 {
   margin-bottom: 0.1rem;
   font-size: 3rem;
-  color: #103F91;
+  color: var(--title-color);
   font-weight: 600;
   letter-spacing: -0.05rem;
 }
-
 
 .intro {
   margin-bottom: 2rem;
@@ -68,7 +86,7 @@ to this section's matching END comment to see page-specific styles.
 }
 
 .byline {
-  color: #888;
+  color: var(--secondary-text);
 }
 
 .footer a:not(.btn--remix):link,
@@ -76,7 +94,6 @@ a:not(.btn--remix):visited {
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
-  color: #000;
   text-decoration: none;
   border-style: none;
 }
@@ -89,19 +106,16 @@ a:not(.btn--remix):visited {
 .divider {
   padding: 0 1rem;
 }
-/******************************************************************************
-END Glitch hello-app default styles
-******************************************************************************/
 
 /* Page structure */
 body {
   background-color: var(--color-bg);
   font-family: var(--body-font), sans-serif;
   font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  
-    font-size: 1.1rem;
-  letter-spacing: 0.0125rem;
+}
+
+body {
+  font-size: 1.2rem;
 }
 
 .wrapper {
@@ -119,14 +133,19 @@ body {
 
 /* Typography */
 
-p > code, li > code {
-  font-size: 1.125rem;
+code {
+  font-size: 1rem;
+  
+}
+
+p > code {
+    font-size: 1.125rem;
+  
 }
 
 p,
 li {
   line-height: 1.7rem !important;
-
   margin: 0 0 1rem 0;
 }
 
@@ -164,17 +183,17 @@ small,
 }
 
 ul {
-  list-style-type: "– ";
+  list-style-type: none;
 }
 
 .date,
 .extract_end {
-  color: #777;
-  margin-bottom: 2rem;
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
 }
 
 .post_nav {
-  color: #bbb;
+  color: var(--nav-color);
   margin-bottom: 1rem;
   margin-right: 0.5rem;
   font-family: var(--title-font), sans-serif;
@@ -188,7 +207,6 @@ ul > li,
 ol > li {
   margin-bottom: 0.75rem;
   line-height: 1.5;
-  font-size: 1rem;
 }
 ul {
   padding: 0 0 0 18px;
@@ -208,7 +226,7 @@ a:not(.btn--remix):link,
 a:not(.btn--remix):visited,
 a:not(h1) {
   text-decoration: none;
-  border-bottom: 1px dotted var(--color-primary);
+  border-bottom: 1.5px dotted var(--color-primary);
   color: var(--foreground);
   transition: background 0.2s linear;
 }
@@ -230,10 +248,29 @@ a:not(h1) {
 }
 .postTitle {
   font-size: 2rem;
-  color: #000;
+  color: var(--secondary-text);
   line-height: 1.1;
 }
 .controls {
   margin: 3rem 0 2rem;
   font-weight: 300;
+}
+
+/* Tag Styles */
+
+.tagList {
+  margin-bottom: 2rem;
+  font-variant: small-caps;
+}
+
+.tagList > * {
+  margin-right: 0.75rem;
+}
+
+.tag_posts {
+  display: none;
+}
+
+.tag_fiction {
+  
 }

@@ -4,6 +4,7 @@ description: What could you build on top of this?
 date: 2021-03-13
 tags:
   - posts
+  - chicken
 layout: layouts/post.njk
 ---
 
