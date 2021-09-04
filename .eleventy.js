@@ -34,7 +34,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "America/New_York" }).toLocaleString(DateTime.DATE_FULL)
   });
-
+  
   /**
    https://github.com/11ty/eleventy-base-blog/pull/34
    https://www.browsersync.io/docs/options#option-ghostMode
@@ -45,6 +45,9 @@ module.exports = function(eleventyConfig) {
   
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
   
+  eleventyConfig.addPassthroughCopy("src/admin/config.yml");
+
+    
   /*
   From: https://github.com/11ty/eleventy/issues/529#issuecomment-568257426 
   
@@ -72,3 +75,6 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+
+
+

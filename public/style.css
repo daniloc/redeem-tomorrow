@@ -11,8 +11,28 @@ to this section's matching END comment to see page-specific styles.
   --color-bg: #F7F7F7;
   --color-text-main: #222;
   --color-primary: #0425DB;
+  --border: #222;
+  --secondary-text: #777;
+  --title-color: #103F91;
+  --nav-color: #bbb;
+
   --wrapper-height: 85vh;
   --image-max-width: 320px;
+  --title-font: "Exo 2";
+  --body-font: "Source Sans Pro";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #151515;
+    --color-text-main: #ccc;
+    --color-primary: #466599;
+    --border: #555;
+    --secondary-text: #999;
+    --title-color: #5585D9;
+    --nav-color: #bbb;
+    color: #ddd;
+  }
 }
 
 /* Basic page style resets */
@@ -25,23 +45,22 @@ to this section's matching END comment to see page-specific styles.
 
 /* Navigation grid */
 .footer {
-  font-family: "Jura", sans-serif;
+  font-family: var(--title-font), sans-serif;
   display: flex;
   justify-content: space-between;
   margin: 1rem auto 0;
   padding: 1rem 0 0 0;
   width: 100%;
   flex-wrap: wrap;
-  border-top: 0.5px solid #222;
-  
+  border-top: 0.5px solid var(--border);
 }
 
-
 .copyright {
-  font-family: "Jura", sans-serif;
+  font-family: var(--title-font), sans-serif;
   width: 100%;
   padding: 1rem 0 0.75rem 0;
-  color: #777;
+  color: var(--secondary-text);
+  font-size: 0.75rem;
 }
 
 .header h1 a:link {
@@ -52,21 +71,22 @@ to this section's matching END comment to see page-specific styles.
 .header h1 {
   margin-bottom: 0.1rem;
   font-size: 3rem;
-  color: #103F91;
-  letter-spacing: -0.05em;
+  color: var(--title-color);
+  font-weight: 600;
+  letter-spacing: -0.05rem;
 }
 
 .intro {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
   font-size: 1.5rem;
 }
 
 .intro p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .byline {
-  color: #888;
+  color: var(--secondary-text);
 }
 
 .footer a:not(.btn--remix):link,
@@ -74,7 +94,6 @@ a:not(.btn--remix):visited {
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
-  color: #000;
   text-decoration: none;
   border-style: none;
 }
@@ -87,53 +106,63 @@ a:not(.btn--remix):visited {
 .divider {
   padding: 0 1rem;
 }
-/******************************************************************************
-END Glitch hello-app default styles
-******************************************************************************/
 
 /* Page structure */
 body {
   background-color: var(--color-bg);
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: var(--body-font), sans-serif;
   font-weight: 300;
 }
+
+body {
+  font-size: 1.2rem;
+}
+
 .wrapper {
   min-height: var(--wrapper-height);
   place-items: center;
   margin: 2rem 2rem 0;
 }
 
-
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 /* Typography */
-p {
-  margin: 0 0 1rem 0;
-  line-height: 1.5 !important;
+
+code {
   font-size: 1rem;
+  
 }
+
+p > code {
+    font-size: 1.125rem;
+  
+}
+
+p,
+li {
+  line-height: 1.7rem !important;
+  margin: 0 0 1rem 0;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-  margin: 1rem 0 0.8rem;
-  font-family: "Jura", sans-serif;
-  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  font-family: var(--title-font), sans-serif;
+  font-weight: 500;
   color: var(--color-text-main);
-      letter-spacing: -0.025em;
-    margin-left: -0.1rem;
+  margin-left: -0.1rem;
 }
 h1 {
-  margin-bottom: 1.25rem;
   display: inline-flex;
-  font-weight: 700;
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 h2 {
@@ -153,12 +182,26 @@ small,
   font-size: 0.8rem;
 }
 
-ul { 
-  list-style-type: "■  "; 
+ul {
+  list-style-type: none;
 }
 
-.date, .extract_end {
-  color: #777;
+.date,
+.extract_end {
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
+}
+
+.post_nav {
+  color: var(--nav-color);
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  font-family: var(--title-font), sans-serif;
+}
+
+img {
+    max-width:100%;
+  padding: 1rem;
 }
 
 .extract_end {
@@ -169,7 +212,6 @@ ul > li,
 ol > li {
   margin-bottom: 0.75rem;
   line-height: 1.5;
-  font-size: 1rem;
 }
 ul {
   padding: 0 0 0 18px;
@@ -189,7 +231,7 @@ a:not(.btn--remix):link,
 a:not(.btn--remix):visited,
 a:not(h1) {
   text-decoration: none;
-  border-bottom: 1px dotted var(--color-primary);
+  border-bottom: 1.5px dotted var(--color-primary);
   color: var(--foreground);
   transition: background 0.2s linear;
 }
@@ -197,7 +239,7 @@ a:not(h1) {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: "Merriweather Sans", serif;
+  font-family: var(--body-font), serif;
   font-style: normal;
   font-weight: bold;
 }
@@ -211,10 +253,29 @@ a:not(h1) {
 }
 .postTitle {
   font-size: 2rem;
-  color: #000;
+  color: var(--secondary-text);
   line-height: 1.1;
-  margin-bottom: 2rem;
 }
 .controls {
   margin: 3rem 0 2rem;
+  font-weight: 300;
+}
+
+/* Tag Styles */
+
+.tagList {
+  margin-bottom: 2rem;
+  font-variant: small-caps;
+}
+
+.tagList > * {
+  margin-right: 0.75rem;
+}
+
+.tag_posts {
+  display: none;
+}
+
+.tag_fiction {
+  
 }

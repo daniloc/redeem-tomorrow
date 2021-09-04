@@ -1,0 +1,17 @@
+<h1 class="preview">
+  <a href="{{ url }}">{{ title }}</a>
+</h1>
+<p class="date">
+  {{ date | htmlDateString }}
+</p>
+
+<div class="tagList">
+  {% for item in tags %}
+  <a href={{"/tags/" + item + "/" }} class= {{ "tag_" + item }}>{{ item | safe }}</a>
+  {% endfor %}
+</div>
+
+
+{{ content | safe }}
+
+<span class="extract_end">...</span>

@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "A simple blog, set up with Eleventy.",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
+    "start": "eleventy --serve"
   },
   "dependencies": {
     "eleventy-plugin-seo": "^0.5.1",
