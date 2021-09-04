@@ -44,6 +44,9 @@ module.exports = function(eleventyConfig) {
   */
   
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
+  
+  eleventyConfig.addPassthroughCopy("src/admin/config.yml");
+
     
   /*
   From: https://github.com/11ty/eleventy/issues/529#issuecomment-568257426 
@@ -72,3 +75,6 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+
+
+

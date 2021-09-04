@@ -199,6 +199,11 @@ ul {
   font-family: var(--title-font), sans-serif;
 }
 
+img {
+    max-width:100%;
+  padding: 1rem;
+}
+
 .extract_end {
   text-align: center;
 }

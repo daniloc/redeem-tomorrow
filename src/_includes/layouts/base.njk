@@ -1,52 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">    
-    <script src="https://kit.fontawesome.com/2da2f435b9.js" crossorigin="anonymous"></script>
+    <script>
+      if (location.protocol != "https:") {
+        location.href =
+          "https:" +
+          window.location.href.substring(window.location.protocol.length);
+      }
+    </script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M083DQ7Q9G"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-M083DQ7Q9G");
+    </script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&family=Source+Sans+Pro:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2da2f435b9.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Your new 11ty blog" />
     <link rel="stylesheet" type="text/css" href="/public/style.css" />
     {% seo "" %}
-    
   </head>
   <body>
-  <main class="wrapper">
-    <header class="header">
-      <div class="content">
-            <h1>
+    <main class="wrapper">
+      <header class="header">
+        <div class="content">
+          <h1>
             <a href="/">
-        Redeem Tomorrow
-                    </a>
-    </h1>
-      <p class="byline">
-        by Danilo Campos
-      </p>
-      </div>
-    </header>
-    {{ content | safe }}
-
-          <div class="content">
-
-
-      <footer class="footer">
-        
-        <div class="links">
-          <a href="/">Home</a>
-          <span class="divider"> </span>
-          <a href="/posts">Posts</a>
-          <span class="divider"> </span>
-          <a href="/about">About</a>
+              Redeem Tomorrow
+            </a>
+          </h1>
+          <p class="byline">
+            by Danilo Campos
+          </p>
         </div>
-      </footer>
-    
-            <p class="copyright">
+      </header>
+      {{ content | safe }}
+
+      <div class="content">
+        <footer class="footer">
+          <div class="links">
+            <a href="/">Home</a>
+            <span class="divider"> </span>
+            <a href="/posts">Posts</a>
+            <span class="divider"> </span>
+            <a href="/about">About</a>
+          </div>
+        </footer>
+
+        <p class="copyright">
           Copyright 2021 by Danilo Campos
         </p>
-    </div>
-    
-  </main>
-   
+      </div>
+    </main>
   </body>
 </html>
